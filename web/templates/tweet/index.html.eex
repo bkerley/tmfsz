@@ -3,12 +3,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Id str</th>
-      <th>Id number</th>
       <th>Text</th>
-      <th>Body</th>
       <th>Created at</th>
-      <th>Default imae file name</th>
       <th>Caption</th>
 
       <th></th>
@@ -17,22 +13,14 @@
   <tbody>
 <%= for tweet <- @tweets do %>
     <tr>
-      <td><%= tweet.id_str %></td>
-      <td><%= tweet.id_number %></td>
       <td><%= tweet.text %></td>
-      <td><%= tweet.body %></td>
       <td><%= tweet.created_at %></td>
-      <td><%= tweet.default_imae_file_name %></td>
       <td><%= tweet.caption %></td>
 
       <td class="text-right">
         <%= link "Show", to: tweet_path(@conn, :show, tweet), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: tweet_path(@conn, :edit, tweet), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: tweet_path(@conn, :delete, tweet), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
-
-<%= link "New tweet", to: tweet_path(@conn, :new) %>

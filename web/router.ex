@@ -19,6 +19,7 @@ defmodule Tmfsz.Router do
     get "/", PageController, :index
 
     resources "/tweets", TweetController
+    resources "/caption", CaptionController, singleton: true
   end
 
   # Other scopes may use custom stacks.

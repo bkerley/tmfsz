@@ -1,12 +1,10 @@
 <h2>Show tweet</h2>
 
+<%= for i <- Tmfsz.Tweet.image_urls(@tweet) do %>
+   <%= tag :img, src: i %>
+<% end %>
+
 <ul>
-
-  <li>
-    <strong>Id str:</strong>
-    <%= @tweet.id_str %>
-  </li>
-
   <li>
     <strong>Id number:</strong>
     <%= @tweet.id_number %>
@@ -18,18 +16,8 @@
   </li>
 
   <li>
-    <strong>Body:</strong>
-    <%= @tweet.body %>
-  </li>
-
-  <li>
     <strong>Created at:</strong>
     <%= @tweet.created_at %>
-  </li>
-
-  <li>
-    <strong>Default imae file name:</strong>
-    <%= @tweet.default_imae_file_name %>
   </li>
 
   <li>
@@ -39,5 +27,4 @@
 
 </ul>
 
-<%= link "Edit", to: tweet_path(@conn, :edit, @tweet) %>
 <%= link "Back", to: tweet_path(@conn, :index) %>

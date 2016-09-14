@@ -13,5 +13,6 @@ defmodule Tmfsz.Repo.Migrations.CreateTweet do
       timestamps()
     end
 
+    create index(:tweets, [:id_number], unique: true)
   end
 end

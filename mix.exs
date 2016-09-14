@@ -19,7 +19,7 @@ defmodule Tmfsz.Mixfile do
   def application do
     [mod: {Tmfsz, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :extwitter]]
+                    :phoenix_ecto, :postgrex, :extwitter, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,8 @@ defmodule Tmfsz.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:extwitter, "~> 0.7.2"},
-     {:oauth, github: "tim/erlang-oauth"}
+     {:oauth, github: "tim/erlang-oauth"},
+     {:timex, "~> 3.0.8"}
     ]
   end
 
