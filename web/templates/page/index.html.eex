@@ -1,6 +1,11 @@
 <div class="jumbotron">
   <h1>YOURE IN THE SEARCH ZONE NOW</h1>
   <h2>YOUR QUERIES BELONG TO ME</h2>
+  <% {captioned_count, all_count} = Tmfsz.Tweet.counts %>
+  <p>
+    Searching <%= captioned_count %> images
+    and <%= all_count %> tweets.
+  </p>
 </div>
 
 <%= form_for @conn, search_path(@conn, :search), [as: :search, method: "get"], fn f -> %>

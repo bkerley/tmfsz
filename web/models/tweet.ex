@@ -25,6 +25,12 @@ defmodule Tmfsz.Tweet do
     |> validate_required([:id_str, :id_number, :text, :body, :created_at])
   end
 
+  def counts do
+    from(t in Tweet,
+         select: {count(t.caption), count(t.id)})
+    |> Repo.one
+  end
+
   def index do
     from(t in Tweet,
          order_by: [desc: t.created_at])
