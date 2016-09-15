@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>rank</th>
+      <th>text</th>
+      <th>image text</th>
+      <th>click</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for {tweet, rank} <- @results do %>
+    <tr>
+      <td><%= round(rank * 10000) %></td>
+      <td><%= tweet.text %></td>
+      <td><%= tweet.caption %></td>
+      <td><%= link "go to", to: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

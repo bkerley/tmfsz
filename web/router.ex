@@ -9,6 +9,15 @@ defmodule Tmfsz.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+    plug Dmfsz.BasicAuth
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -17,6 +26,11 @@ defmodule Tmfsz.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/search", SearchController, :search
+  end
+
+  scope "/admin", Tmfsz do
+    pipe_through :admin
 
     resources "/tweets", TweetController
     resources "/caption", CaptionController, singleton: true

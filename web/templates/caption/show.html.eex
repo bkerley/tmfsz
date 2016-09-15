@@ -16,7 +16,10 @@
 
   <div class="form-group">
     <%= label f, :caption, class: "control-label" %>
-    <%= textarea f, :caption, class: "form-control" %>
+    (no text? just hit space)
+    <%= textarea(f, :caption, class: "form-control",
+        autocomplete: "off", autocorrect: "off",
+        autocapitalize: "off", spellcheck: "false") %>
     <%= error_tag f, :caption %>
   </div>
 
@@ -24,3 +27,7 @@
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<blockquote class="twitter-tweet" data-lang="en">
+  <%= content_tag :a, href: "https://twitter.com/#{@tweet.body["user"]["screen_name"]}/status/#{@tweet.id_number}" do %>x<% end %>
+</blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -40,7 +40,8 @@ defmodule Tmfsz.Mixfile do
      {:cowboy, "~> 1.0"},
      {:extwitter, "~> 0.7.2"},
      {:oauth, github: "tim/erlang-oauth"},
-     {:timex, "~> 3.0.8"}
+     {:timex, "~> 3.0.8"},
+     {:comeonin, "~> 2.5.2"}
     ]
   end
 
