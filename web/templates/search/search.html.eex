@@ -1,9 +1,21 @@
+<%= form_for @conn, search_path(@conn, :search), [as: :search, method: "get"], fn f -> %>
+<div class="form-group searchz0ne">
+  <%= text_input f, :q, placeholder: "skeleton" %>
+  <%= submit "search", class: "btn btn-primary" %>
+</div>
+<p>
+  DO YOUR
+  <a href="https://www.postgresql.org/docs/9.5/static/datatype-textsearch.html#DATATYPE-TSQUERY">HOMEWORK</a>
+  IF SEARCH DOESN'T WORK
+<% end %>
+
+
 <table>
   <thead>
     <tr>
       <th>rank</th>
-      <th>text</th>
-      <th>image text</th>
+      <th class="text">text</th>
+      <th class="caption">transcription</th>
       <th>click</th>
     </tr>
   </thead>
@@ -13,7 +25,7 @@
       <td><%= round(rank * 10000) %></td>
       <td><%= tweet.text %></td>
       <td><%= tweet.caption %></td>
-      <td><%= link "go to", to: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" %></td>
+      <td><%= link "see on Twitter", to: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" %></td>
     </tr>
     <% end %>
   </tbody>

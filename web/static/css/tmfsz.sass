@@ -1,0 +1,49 @@
+html
+  height: 100%
+  background-size: cover
+
+body.con_page, body.con_search
+  background-color: #a90329
+  background: linear-gradient(to top, #a90329 0%,#fc3605 21%,#8f0222 44%,#6d0019 100%)
+
+  &.act_index
+    div.jumbotron
+      background-image: url("/images/on_fire-1400x880.jpg")
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center center
+
+      h1, h2, p
+        color: yellow
+        text-shadow: 0 0 10px black
+      p
+        background-color: rgba(0, 0, 0, 0.5)
+
+  form
+    input[type="text"]
+      width: 600px
+      padding: 6px
+      color: #ff8
+      background-color: #400
+      border: 0
+      border-radius: 8px
+
+  p
+    color: yellow
+
+  &.act_search
+    table
+      color: yellow
+      font-size: 1.4em
+      th, td
+        padding: 4px
+
+  .btn.btn-primary
+    color: yellow
+    background-color: #400
+    border: 2px solid yellow
+    border-radius: 8px
+
+
+  a:link, a:visited
+    color: #f88

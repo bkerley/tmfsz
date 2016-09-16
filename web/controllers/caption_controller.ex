@@ -7,8 +7,13 @@ defmodule Tmfsz.CaptionController do
   def show(conn, _params = %{"id_number" => id_number}) do
     tweet = Repo.get_by!(Tweet, id_number: id_number)
     cset = Tweet.changeset(tweet)
+    {captioned_count, all_count} = Tmfsz.Tweet.counts
 
-    render(conn, "show.html", tweet: tweet, changeset: cset)
+    render(conn, "show.html",
+           tweet: tweet,
+           changeset: cset,
+           captioned_count: captioned_count,
+           all_count: all_count)
   end
 
   def show(conn, _params) do

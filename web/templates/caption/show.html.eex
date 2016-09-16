@@ -24,11 +24,12 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :caption, class: "control-label" %>
+    <%= label f, :caption, "Transcribe", class: "control-label" %>
     (no text or no images? just hit space)
     <%= textarea(f, :caption, class: "form-control",
         autocomplete: "off", autocorrect: "off",
-        autocapitalize: "off", spellcheck: "false") %>
+        autocapitalize: "off", spellcheck: "false",
+        rows: 10) %>
     <%= error_tag f, :caption %>
   </div>
 

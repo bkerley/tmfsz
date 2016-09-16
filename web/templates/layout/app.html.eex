@@ -11,13 +11,23 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
+  <%= content_tag :body, class: body_class(@conn) do %>
     <div class="container">
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+      <footer>
+        <p>
+          SO WHAT IF I NEVER ASKED PERMISSION FROM
+          <a href="https://twitter.com/dasharez0ne">DA SHARE Z0NE</a>
+          <br />
+          I GOT TIRED OF SCROLLING THROUGH ALL THE CONTENT ALL THE TIME
+          <BR />
+          ITS VERY SITATIONAL SOMETIMES
+        </p>
+      </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-  </body>
+  <% end %>
 </html>

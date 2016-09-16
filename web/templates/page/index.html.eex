@@ -3,14 +3,18 @@
   <h2>YOUR QUERIES BELONG TO ME</h2>
   <% {captioned_count, all_count} = Tmfsz.Tweet.counts %>
   <p>
-    Searching <%= captioned_count %> images
-    and <%= all_count %> tweets.
+    SEARCHING <%= captioned_count %> TARNSCRIBED IMAGES
+    AND <%= all_count %> TWEETS.
   </p>
 </div>
 
 <%= form_for @conn, search_path(@conn, :search), [as: :search, method: "get"], fn f -> %>
 <div class="form-group searchz0ne">
-  <%= text_input f, :q %>
+  <%= text_input f, :q, placeholder: "skeleton" %>
   <%= submit "search", class: "btn btn-primary" %>
 </div>
+<p>
+  DO YOUR
+  <a href="https://www.postgresql.org/docs/9.5/static/datatype-textsearch.html#DATATYPE-TSQUERY">HOMEWORK</a>
+  IF SEARCH DOESN'T WORK
 <% end %>
