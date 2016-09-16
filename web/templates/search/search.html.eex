@@ -14,19 +14,23 @@
   <thead>
     <tr>
       <th>rank</th>
-      <th class="text">text</th>
       <th class="caption">transcription</th>
-      <th>click</th>
     </tr>
   </thead>
   <tbody>
 <%= for {tweet, rank} <- @results do %>
     <tr>
       <td><%= round(rank * 10000) %></td>
-      <td><%= tweet.text %></td>
-      <td><%= tweet.caption %></td>
-      <td><%= link "see on Twitter", to: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" %></td>
+      <td>
+        <p><%= tweet.text %></p>
+        <p><%= tweet.caption %></p>
+        <blockquote class="twitter-tweet" data-lang="en">
+          <%= content_tag :a, href: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" do %>x<% end %>
+        </blockquote>
+      <td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
