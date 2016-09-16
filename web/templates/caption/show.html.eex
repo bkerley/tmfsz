@@ -5,6 +5,10 @@
       <%= tag :div, style: "background-image: url(#{i})" %></div>
   <% end %>
 </div>
+<% id_int = Decimal.to_integer(@tweet.id_number) %>
+<%= link to: caption_path(@conn, :show, %{id_number: id_int}) do %>
+<%= caption_url(@conn, :show, %{id_number: id_int}) %>
+<% end %>
 
 <%= form_for @changeset, caption_path(@conn, :update), fn f -> %>
   <%= hidden_input f, :id_number %>
@@ -16,7 +20,7 @@
 
   <div class="form-group">
     <%= label f, :caption, class: "control-label" %>
-    (no text? just hit space)
+    (no text or no images? just hit space)
     <%= textarea(f, :caption, class: "form-control",
         autocomplete: "off", autocorrect: "off",
         autocapitalize: "off", spellcheck: "false") %>

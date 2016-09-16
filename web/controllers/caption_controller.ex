@@ -4,6 +4,13 @@ defmodule Tmfsz.CaptionController do
   alias Tmfsz.Repo
   alias Tmfsz.Tweet
 
+  def show(conn, _params = %{"id_number" => id_number}) do
+    tweet = Repo.get_by!(Tweet, id_number: id_number)
+    cset = Tweet.changeset(tweet)
+
+    render(conn, "show.html", tweet: tweet, changeset: cset)
+  end
+
   def show(conn, _params) do
     tweet = Tweet.uncaptioned
     cset = Tweet.changeset(tweet)
