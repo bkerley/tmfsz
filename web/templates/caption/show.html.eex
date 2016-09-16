@@ -2,13 +2,18 @@
 
 <div class="images">
   <%= for i <- Tmfsz.Tweet.image_urls(@tweet) do %>
-      <%= tag :div, style: "background-image: url(#{i})" %></div>
+      <%= content_tag :div, "", style: "background-image: url(#{i})" %>
+      <%= link i, to: i %>
   <% end %>
 </div>
 <% id_int = Decimal.to_integer(@tweet.id_number) %>
-<%= link to: caption_path(@conn, :show, %{id_number: id_int}) do %>
-<%= caption_url(@conn, :show, %{id_number: id_int}) %>
-<% end %>
+<p>
+  <strong>Confused?</strong>
+  Let someone else try:
+  <%= link to: caption_path(@conn, :show, %{id_number: id_int}) do %>
+    <%= caption_url(@conn, :show, %{id_number: id_int}) %>
+  <% end %>
+</p>
 
 <%= form_for @changeset, caption_path(@conn, :update), fn f -> %>
   <%= hidden_input f, :id_number %>
@@ -29,9 +34,19 @@
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
+    ctrl+enter, cmd+enter, meta+enter also work
   </div>
 <% end %>
 
 <blockquote class="twitter-tweet" data-lang="en">
   <%= content_tag :a, href: "https://twitter.com/#{@tweet.body["user"]["screen_name"]}/status/#{@tweet.id_number}" do %>x<% end %>
 </blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var textZone = document.getElementsByTagName("textarea")[0];
+  textZone.addEventListener("keydown", function(event) {
+  if (event.keyCode != 13) return;
+  if (!event.ctrlKey && !event.metaKey) return;
+  textZone.form.submit();
+  });
+  textZone.focus();
+</script>
