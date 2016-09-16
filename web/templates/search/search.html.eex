@@ -27,9 +27,10 @@
         <blockquote class="twitter-tweet" data-lang="en">
           <%= content_tag :a, href: "https://twitter.com/#{tweet.body["user"]["screen_name"]}/status/#{tweet.id_number}" do %>x<% end %>
         </blockquote>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       <td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
