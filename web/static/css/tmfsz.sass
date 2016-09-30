@@ -7,6 +7,9 @@ body.con_page, body.con_search
   background: linear-gradient(to top, #a90329 0%,#fc3605 21%,#8f0222 44%,#6d0019 100%)
   background-attachment: fixed
 
+  a:link, a:visited
+    color: #f88
+
   &.act_index
     div.jumbotron
       background-image: url("/images/on_fire-1400x880.jpg")
@@ -46,13 +49,10 @@ body.con_page, body.con_search
     border: 2px solid yellow
     border-radius: 8px
 
-  body.con_caption
-    div.images div
-      width: 700px
-      height: 700px
-      background-size: contain
-      background-repeat: no-repeat
-      background-position: center center
-
-  a:link, a:visited
-    color: #f88
+body.con_caption
+  div.images div
+    width: 700px
+    height: 700px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
