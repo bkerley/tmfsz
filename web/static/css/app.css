@@ -6,4 +6,5 @@ div.images div {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
 }
