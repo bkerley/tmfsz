@@ -19,3 +19,11 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+!function(t,m,f,z,o,n,e){t.GoogleAnalyticsObject=f;t[f]||(t[f]=function(){
+(t[f].q=t[f].q||[]).push(arguments)});t[f].l=+new Date;n=m.createElement(z);
+e=m.getElementsByTagName(z)[0];n.src=o;e.parentNode.insertBefore(n,e)}
+(window,document,'ga','script','//www.google-analytics.com/analytics.js');
+
+ga('create', 'UA-605807-21', 'auto');
+ga('send', 'pageview');

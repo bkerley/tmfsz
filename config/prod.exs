@@ -18,7 +18,7 @@ config :logger, level: :info
 config(:tmfsz, Tmfsz.Endpoint,
        http: [port: {:system, "PORT"}],
        url: [scheme: "https",
-             host: "tmfsz.herokuapp.com",
+             host: "dasearch.zone",
              port: 443],
        force_ssl: [rewrite_on: [:x_forwarded_proto]],
        cache_static_manifest: "priv/static/manifest.json",
