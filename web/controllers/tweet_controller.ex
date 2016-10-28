@@ -7,7 +7,7 @@ defmodule Tmfsz.TweetController do
 
   def index(conn, _params) do
     tweets = from(t in Tweet,
-                  order_by: [desc: :inserted_at, desc: :id])
+                  order_by: [desc: :id_number])
     |> Repo.all()
 
     render(conn, "index.html", tweets: tweets)
