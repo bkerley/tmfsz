@@ -1,10 +1,15 @@
 defmodule Tmfsz.TweetController do
   use Tmfsz.Web, :controller
 
+  import Ecto.Query, only: [from: 2]
+
   alias Tmfsz.Tweet
 
   def index(conn, _params) do
-    tweets = Repo.all(Tweet)
+    tweets = from(t in Tweet,
+                  order_by: [desc: :inserted_at, desc: :id])
+    |> Repo.all()
+
     render(conn, "index.html", tweets: tweets)
   end
 
