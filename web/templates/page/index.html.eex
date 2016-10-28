@@ -13,8 +13,6 @@
   <%= text_input f, :q, placeholder: "skeleton" %>
   <%= submit "search", class: "btn btn-primary" %>
 </div>
-<p>
-  DO YOUR
-  <a href="https://www.postgresql.org/docs/9.5/static/datatype-textsearch.html#DATATYPE-TSQUERY">HOMEWORK</a>
-  IF SEARCH DOESN'T WORK
 <% end %>
+<a class="twitter-timeline" href="https://twitter.com/dasearchz0ne">Tweets by dasearchz0ne</a>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
