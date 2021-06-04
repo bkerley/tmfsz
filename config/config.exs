@@ -13,9 +13,9 @@ config :tmfsz,
 config :tmfsz, Tmfsz.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "pNQKptxFS16H1GQKQWSSVWdYCR2uN5FXud/VPfUUOzieONl9vv20Uw2CZayPzOol",
-  render_errors: [view: Tmfsz.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Tmfsz.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: Tmfsz.ErrorView, accepts: ~w(html json)]
+#  pubsub: [name: Tmfsz.PubSub,
+#           adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
